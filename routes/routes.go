@@ -4,13 +4,13 @@ import (
 	"github.com/gorilla/mux"
 )
 
-var R mux.Router
+func FinanceRouter() *mux.Router {
+	r := mux.NewRouter()
 
-func FinanceRouter() {
-	costs()
-	takings()
-	profitLoss()
-	income()
+	Costs(r)
+	Takings(r)
+	ProfitLoss(r)
+	Income(r)
 
-	return
+	return r
 }

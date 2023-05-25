@@ -2,10 +2,11 @@ package routes
 
 import (
 	"github.com/araquach/apiFinance23/handlers"
+	"github.com/gorilla/mux"
 )
 
-func costs() {
-	s := R.PathPrefix("/api/finance").Subrouter()
+func Costs(r *mux.Router) {
+	s := r.PathPrefix("/api/finance").Subrouter()
 
 	s.HandleFunc("/costs-year-by-year", handlers.ApiCostsYearByYear).Methods("GET")
 	s.HandleFunc("/costs-month-by-month/{start}/{end}", handlers.ApiCostsMonthByMonth).Methods("GET")

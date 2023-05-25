@@ -2,10 +2,9 @@ package routes
 
 import (
 	"github.com/araquach/apiFinance23/handlers"
+	"github.com/gorilla/mux"
 )
 
-func income() {
-	s := R.PathPrefix("/api/finance").Subrouter()
-
-	s.HandleFunc("/income-by-month/{start}/{end}", handlers.ApiMonthlyIncomeByDateRange).Methods("GET")
+func Income(r *mux.Router) {
+	r.HandleFunc("/income-by-month/{start}/{end}", handlers.ApiMonthlyIncomeByDateRange).Methods("GET")
 }

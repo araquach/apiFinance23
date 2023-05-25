@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/araquach/apiFinance23/routes"
 	db "github.com/araquach/dbService"
+	"github.com/gorilla/mux"
 	"log"
 	"net/http"
 	"os"
@@ -18,9 +19,12 @@ func main() {
 	}
 
 	// Load API Routes
-	routes.FinanceRouter()
+	financeRouter := routes.FinanceRouter()
+	mainRouter := mux.NewRouter()
+
+	mainRouter.PathPrefix("/api/finance").Handler(financeRouter)
 
 	log.Printf("Starting server on %s", port)
 
-	http.ListenAndServe(":"+port, &routes.R)
+	http.ListenAndServe(":"+port, mainRouter)
 }
