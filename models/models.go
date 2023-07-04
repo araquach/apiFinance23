@@ -32,14 +32,3 @@ type Income struct {
 	Category    string    `json:"category"`
 	SubCat      string    `json:"sub_cat"`
 }
-
-type TeamMember struct {
-	ID        uint   `json:"id" gorm:"primary_key"`
-	Salon     uint   `json:"salon"`
-	StaffId   uint   `json:"staff_id"`
-	FirstName string `json:"first_name"`
-	LastName  string `json:"last_name"`
-	Level     uint   `json:"level"`
-	LevelName string `json:"level_name"`
-	Position  uint   `json:"position"`
-}

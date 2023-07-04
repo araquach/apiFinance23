@@ -6,5 +6,7 @@ import (
 )
 
 func Income(r *mux.Router) {
-	r.HandleFunc("/income-by-month/{start}/{end}", handlers.ApiMonthlyIncomeByDateRange).Methods("GET")
+	s := r.PathPrefix("/api/finance").Subrouter()
+
+	s.HandleFunc("/income-by-month/{start}/{end}", handlers.ApiMonthlyIncomeByDateRange).Methods("GET")
 }

@@ -6,5 +6,7 @@ import (
 )
 
 func ProfitLoss(r *mux.Router) {
-	r.HandleFunc("/costs-and-takings/{start}/{end}", handlers.ApiCostsAndTakings).Methods("GET")
+	s := r.PathPrefix("/api/finance").Subrouter()
+
+	s.HandleFunc("/costs-and-takings/{start}/{end}", handlers.ApiCostsAndTakings).Methods("GET")
 }

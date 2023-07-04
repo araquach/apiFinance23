@@ -14,10 +14,6 @@ import (
 )
 
 func ApiTakingsByYear(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-
 	type JakataTotals struct {
 		Year        string  `json:"year"`
 		Products    float32 `json:"products"`
@@ -167,10 +163,6 @@ func mergeYearData(dbData interface{}, yearMap map[string]float32, years []strin
 }
 
 func ApiMonthlyTakingsByDateRange(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-
 	type JakResult struct {
 		MonthTotal     string  `json:"month"`
 		Services       float32 `json:"services"`
@@ -416,10 +408,6 @@ func MergeResultsWithMonthsList(monthsList []string, results interface{}) interf
 }
 
 func ApiStylistTakingsMonthByMonth(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-
 	type result struct {
 		Month          string  `json:"month"`
 		Products       float32 `json:"products"`
@@ -468,10 +456,6 @@ func ApiStylistTakingsMonthByMonth(w http.ResponseWriter, r *http.Request) {
 }
 
 func ApiTakingsByStylistComparison(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-
 	type result struct {
 		Stylist  string  `json:"stylist"`
 		Products float32 `json:"products"`
@@ -500,10 +484,6 @@ func ApiTakingsByStylistComparison(w http.ResponseWriter, r *http.Request) {
 }
 
 func ApiTotalsByDateRange(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-
 	type JakataTotals struct {
 		Month          string  `json:"month"`
 		Products       float32 `json:"products"`

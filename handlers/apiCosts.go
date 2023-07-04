@@ -14,10 +14,6 @@ import (
 )
 
 func ApiCostsYearByYear(w http.ResponseWriter, _ *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-
 	type JakataTotals struct {
 		Year  string  `json:"year"`
 		Total float32 `json:"total"`
@@ -105,10 +101,6 @@ func ApiCostsYearByYear(w http.ResponseWriter, _ *http.Request) {
 }
 
 func ApiCostsMonthByMonth(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-
 	type JakataTotals struct {
 		Month       string  `json:"month"`
 		Total       float32 `json:"total"`
@@ -205,10 +197,6 @@ func ApiCostsMonthByMonth(w http.ResponseWriter, r *http.Request) {
 }
 
 func ApiCostsByCat(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-
 	var t float32
 
 	type Result struct {
@@ -291,10 +279,6 @@ func ApiCostsByCat(w http.ResponseWriter, r *http.Request) {
 }
 
 func ApiIndCostMonthByMonth(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
-
 	type Result struct {
 		Month       string  `json:"month"`
 		Total       float32 `json:"total"`
